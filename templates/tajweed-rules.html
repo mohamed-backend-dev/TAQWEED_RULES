@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}أحكام التجويد كاملة: شرح مبسط لجميع القواعد الأساسية مع الأمثلة{% endblock %}
+
+{% block head %}
+        <meta name="description" content="شرح مبسط لأحكام النون الساكنة، الميم الساكنة، المدود، المخارج، الصفات مع أمثلة تطبيقية.">
+        <link rel="canonical" href="https://example.com/tajweed-rules.html">
+        <meta property="og:title" content="أحكام التجويد كاملة: شرح مبسط لجميع القواعد الأساسية مع الأمثلة">
+        <meta property="og:description" content="شرح مبسط لأحكام النون الساكنة، الميم الساكنة، المدود، المخارج، الصفات مع أمثلة تطبيقية.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://example.com/tajweed-rules.html">
+        <meta property="og:locale" content="ar_AR">
+        <script type="application/ld+json">
+        {
+         "@context":"https://schema.org",
+         "@type":"Article",
+         "headline":"أحكام التجويد كاملة: شرح مبسط لجميع القواعد الأساسية مع الأمثلة",
+         "description":"شرح مبسط لأحكام النون الساكنة، الميم الساكنة، المدود، المخارج، الصفات مع أمثلة تطبيقية.",
+         "url":"https://example.com/tajweed-rules.html",
+         "author": {
+             "@type":"Organization",
+             "name":"مشروع التجويد"
+         },
+         "publisher": {
+             "@type":"Organization",
+             "name":"مشروع التجويد",
+             "logo": {
+                 "@type":"ImageObject",
+                 "url":"https://example.com/static/logo.png"
+             }
+         }
+        }
+        </script>
+{% endblock %}
+
+{% block content %}
+        <article>
+            <h1>أحكام التجويد كاملة</h1>
+
+            <section>
+                <h2>أحكام النون الساكنة</h2>
+                <p>الإظهار، الإدغام، الإقلاب، الإخفاء مع أمثلة من القرآن.</p>
+            </section>
+
+            <section>
+                <h2>أحكام الميم الساكنة</h2>
+                <p>الإظهار الشفوي، الإدغام الشفوي، الإخفاء الشفوي، الإقلاب.</p>
+            </section>
+
+            <section>
+                <h2>المدود</h2>
+                <p>المد الطبيعي، المد الفرعي، المد الواجب، مع طول كل منها.</p>
+            </section>
+
+            <section>
+                <h2>المخارج</h2>
+                <p>المخرج هو الموضع من الحلق إلى الشفة؛ وأهمها الحلق، اللسان، الشفتان.</p>
+            </section>
+
+            <section>
+                <h2>الصفات</h2>
+                <p>الصفات الحلقية واللغوية مثل الجهر، الشدة، التفشي، وغيرها.</p>
+            </section>
+
+            <section>
+                <h2>أسئلة متكررة</h2>
+                <dl>
+                    <dt>هل يختلف المد حسب السورة؟</dt>
+                    <dd>المد ثابت بحسب حكمه لا يتغير بتغيير السورة.</dd>
+                    <dt>كيف أتعلم المخارج بسهولة؟</dt>
+                    <dd>بالتدرّب أمام معلم أو بمشاهدة فيديوهات توضيحية.</dd>
+                </dl>
+            </section>
+
+            <section class="links">
+                <h2>مقالات ذات صلة</h2>
+                <ul>
+                    <li><a href="{{ url_for('what_is_tajweed') }}">ما هو علم التجويد؟</a></li>
+                    <li><a href="{{ url_for('history_of_tajweed') }}">تاريخ علم التجويد</a></li>
+                </ul>
+            </section>
+        </article>
+    {% endblock %}

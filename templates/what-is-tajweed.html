@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}ما هو علم التجويد؟ تعريف شامل وأهميته وأهدافه في تلاوة القرآن الكريم{% endblock %}
+
+{% block head %}
+        <meta name="description" content="تعريف علم التجويد لُغوياً وشرعياً، أهميته، حكمه، والفرق بينه وبين الترتيل، بالإضافة لأهدافه الأساسية.">
+        <link rel="canonical" href="https://example.com/what-is-tajweed.html">
+        <meta property="og:title" content="ما هو علم التجويد؟ تعريف شامل وأهميته">
+        <meta property="og:description" content="تعريف علم التجويد لُغوياً وشرعياً، أهميته، حكمه، والفرق بينه وبين الترتيل، بالإضافة لأهدافه الأساسية.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://example.com/what-is-tajweed.html">
+        <meta property="og:locale" content="ar_AR">
+        <script type="application/ld+json">
+        {
+         "@context":"https://schema.org",
+         "@type":"Article",
+         "headline":"ما هو علم التجويد؟ تعريف شامل وأهميته وأهدافه في تلاوة القرآن الكريم",
+         "description":"تعريف علم التجويد لُغوياً وشرعياً، أهميته، حكمه، والفرق بينه وبين الترتيل، بالإضافة لأهدافه الأساسية.",
+         "url":"https://example.com/what-is-tajweed.html",
+         "author": {
+             "@type":"Organization",
+             "name":"مشروع التجويد"
+         },
+         "publisher": {
+             "@type":"Organization",
+             "name":"مشروع التجويد",
+             "logo": {
+                 "@type":"ImageObject",
+                 "url":"https://example.com/static/logo.png"
+             }
+         }
+        }
+        </script>
+{% endblock %}
+
+{% block content %}
+        <article>
+            <h1>ما هو علم التجويد؟</h1>
+            <section>
+                <h2>التعريف اللغوي والشرعي</h2>
+                <p>التجويد في اللغة: التحسين والتزين. اصطلاحاً: البيان المنظم لأحكام مخارج الحروف وصفاتها عند تلاوة
+                    القرآن الكريم.</p>
+            </section>
+            <section>
+                <h2>أهمية التجويد</h2>
+                <p>يحفظ مقاصد القرآن ويجمل التلاوة، ويُعد واجباً شرعياً، إذ قال النبي ﷺ: «إنما يُنْزَلُ الْقُرْآنُ
+                    عَلَى‏ قَوْمٍ عَجَمٍ أَهْوَاءُ».</p>
+            </section>
+            <section>
+                <h2>الحكم الشرعي</h2>
+                <p>واجب على كل مسلم، ومجتهدون ذهبوا إلى أنه واجب عين أو كفاية.</p>
+            </section>
+            <section>
+                <h2>الفرق بين التجويد والترتيل</h2>
+                <p>الترتيل هو التأنّي في القراءة مع الهدوء، وأما التجويد فيشمل القواعد التي تبين كيف تُنطق الحروف
+                    وآداؤها.</p>
+            </section>
+            <section>
+                <h2>أهداف التجويد</h2>
+                <ul>
+                    <li>بيان معاني القرآن.</li>
+                    <li>تحقيق مخاطبة الله بكلامه كما أنزل.</li>
+                    <li>تفادي الإحداث والتبديل.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>أسئلة متكررة</h2>
+                <dl>
+                    <dt>ما الفرق بين التجويد والتأويل؟</dt>
+                    <dd>التأويل يتعلق بالمعنى، أما التجويد فيتعلق بطريقة النطق.</dd>
+                    <dt>هل يُعفى عن التجويد في صلاة النافلة؟</dt>
+                    <dd>لا، بل يجب بذل الجهد لتلاوة صحيحة.</dd>
+                </dl>
+            </section>
+
+            <section class="links">
+                <h2>مقالات ذات صلة</h2>
+                <ul>
+                    <li><a href="{{ url_for('history_of_tajweed') }}">تاريخ علم التجويد وتطوره</a></li>
+                    <li><a href="{{ url_for('tajweed_rules') }}">أحكام التجويد كاملة</a></li>
+                </ul>
+            </section>
+            <p>مزيد من التفاصيل على <a href="https://quran.com" rel="nofollow" target="_blank">Quran.com</a></p>
+        </article>
+{% endblock %}

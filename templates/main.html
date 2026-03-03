@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}قواعد التجويد ‒ الموقع الشامل لتعلم أحكام التجويد{% endblock %}
+
+{% block head %}
+    <meta name="description" content="مرحباً بكم في موقعنا التعليمي لتعليم قواعد التجويد، نقدم نبذة عن علم التجويد وروابط لمقالات مفصلة حول تعريفه وتاريخه وقواعده.">
+    <link rel="canonical" href="https://example.com/main.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="قواعد التجويد ‒ الموقع الشامل لتعلم أحكام التجويد">
+    <meta property="og:description" content="مرحباً بكم في موقعنا التعليمي لتعليم قواعد التجويد، نقدم نبذة عن علم التجويد وروابط لمقالات مفصلة حول تعريفه وتاريخه وقواعده.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/main.html">
+    <meta property="og:locale" content="ar_AR">
+    <!-- Schema JSON-LD Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "مشروع التجويد",
+      "url": "https://example.com",
+      "logo": "https://example.com/static/logo.png",
+      "sameAs": [
+        "https://quran.com",
+        "https://www.azhar.eg"
+      ]
+    }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <section class="intro">
+        <h1>أهلاً بكم في موقع قواعد التجويد</h1>
+        <p>نهدف إلى تقديم شرح مبسط وعميق لعلم التجويد؛ قواعده، تاريخه، وأهميته في تلاوة القرآن الكريم بدقة وجمال.</p>
+    </section>
+
+    <section class="articles">
+        <h2>المقالات الرئيسية</h2>
+        <div class="cards">
+            <article class="card">
+                <h3><a href="{{ url_for('what_is_tajweed') }}">ما هو علم التجويد؟ تعريف شامل وأهميته</a></h3>
+                <p>تعرف على معنى التجويد وأهدافه وكيفية التمييز بينه وبين الترتيل.</p>
+            </article>
+            <article class="card">
+                <h3><a href="{{ url_for('history_of_tajweed') }}">تاريخ علم التجويد وتطوره</a></h3>
+                <p>سير في مراحل تطور علم التجويد وأبرز العلماء الذين خدموه.</p>
+            </article>
+            <article class="card">
+                <h3><a href="{{ url_for('tajweed_rules') }}">أحكام التجويد كاملة</a></h3>
+                <p>شرح مبسط لجميع القواعد الأساسية مع أمثلة تطبيقية.</p>
+            </article>
+        </div>
+    </section>
+{% endblock %}

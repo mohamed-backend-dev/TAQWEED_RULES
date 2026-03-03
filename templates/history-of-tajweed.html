@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}تاريخ علم التجويد وتطوره عبر العصور وأشهر العلماء الذين خدموه{% endblock %}
+
+{% block head %}
+        <meta name="description" content="نستعرض المراحل الشفوية والتدوين في تاريخ التجويد، أسباب التوثيق، وأبرز العلماء: ابن الجزري، الفراهيدي، أبو عمرو الداني.">
+        <link rel="canonical" href="https://example.com/history-of-tajweed.html">
+        <meta property="og:title" content="تاريخ علم التجويد وتطوره عبر العصور وأشهر العلماء الذين خدموه">
+        <meta property="og:description" content="نستعرض المراحل الشفوية والتدوين في تاريخ التجويد، أسباب التوثيق، وأبرز العلماء: ابن الجزري، الفراهيدي، أبو عمرو الداني.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://example.com/history-of-tajweed.html">
+        <meta property="og:locale" content="ar_AR">
+        <script type="application/ld+json">
+        {
+         "@context":"https://schema.org",
+         "@type":"Article",
+         "headline":"تاريخ علم التجويد وتطوره عبر العصور وأشهر العلماء الذين خدموه",
+         "description":"نستعرض المراحل الشفوية والتدوين في تاريخ التجويد، أسباب التوثيق، وأبرز العلماء: ابن الجزري، الفراهيدي، أبو عمرو الداني.",
+         "url":"https://example.com/history-of-tajweed.html",
+         "author": {
+             "@type":"Organization",
+             "name":"مشروع التجويد"
+         },
+         "publisher": {
+             "@type":"Organization",
+             "name":"مشروع التجويد",
+             "logo": {
+                 "@type":"ImageObject",
+                 "url":"https://example.com/static/logo.png"
+             }
+         }
+        }
+        </script>
+{% endblock %}
+
+{% block content %}
+        <article>
+            <h1>تاريخ علم التجويد وتطوره</h1>
+
+            <section>
+                <h2>المرحلة الشفوية</h2>
+                <p>انتقل علم التجويد من النبي ﷺ إلى الصحابة ثم إلى التابعين عن طريق التلقّي المباشر، دون تدوين.</p>
+            </section>
+
+            <section>
+                <h2>مرحلة التدوين</h2>
+                <p>بدأ العلماء بتدوين القواعد بعد انتشار الإسلام وتباين النطق، حفاظاً على قراءة موحدة.</p>
+            </section>
+
+            <section>
+                <h2>أسباب التوثيق</h2>
+                <ul>
+                    <li>اختلاف اللهجات.</li>
+                    <li>خوف التحريف.</li>
+                    <li>تيسير التعليم.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>أبرز العلماء ومساهماتهم</h2>
+                <ul>
+                    <li><strong>الخليل بن أحمد الفراهيدي</strong> – أول من وضع جدولاً للأحكام والصفات.</li>
+                    <li><strong>أبو عمرو الداني</strong> – شرح الفراهيدي وأضاف قيماً على الإبدال والإظهار.</li>
+                    <li><strong>ابن الجزري</strong> – صنف أشهر الكتب وأكثرها دقّة في القراءات والتجويد.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>أسئلة متكررة</h2>
+                <dl>
+                    <dt>لماذا سمي ابن الجزري بهذا الاسم؟</dt>
+                    <dd>لأنه من جزيرة رندة بلبنان.</dd>
+                    <dt>هل توجد كتب قبل الفراهيدي؟</dt>
+                    <dd>كانت تدوينات بسيطة، لكن الفراهيدي أول من نظمها شمولاً.</dd>
+                </dl>
+            </section>
+
+            <section class="links">
+                <h2>مقالات ذات صلة</h2>
+                <ul>
+                    <li><a href="{{ url_for('what_is_tajweed') }}">ما هو علم التجويد؟</a></li>
+                    <li><a href="{{ url_for('tajweed_rules') }}">أحكام التجويد كاملة</a></li>
+                </ul>
+            </section>
+        </article>
+    {% endblock %}

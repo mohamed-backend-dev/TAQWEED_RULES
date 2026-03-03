@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}الصفحة الثانية — قواعد التجويد{% endblock %}
+
+{% block head %}
+	<meta name="description" content="شرح وموارد للصفحة الثانية">
+{% endblock %}
+
+{% block content %}
+<section class="card reveal">
+	<h2>الصفحة الثانية</h2>
+	<p>هذه الصفحة تمتد من القالب الرئيسي باستخدام Jinja.</p>
+	<p>يمكنك تعديل المحتوى هنا وإضافة مكونات خاصة بك.</p>
+	<a class="btn outline" href="{{ url_for('index') }}">العودة للرئيسية</a>
+	<a class="btn" href="{{ url_for('contact') }}">اتصل بنا</a>
+</section>
+<a href="https://youtu.be/zCY3n64fxN4" target="_blank">
+    <img src="https://img.youtube.com/vi/zCY3n64fxN4/maxresdefault.jpg" 
+         alt="YouTube Video"
+         width="500">
+    <p>الفيديو الاول للفضيلة الشيخ ياسر سلامة في قواعد التجويد</p>
+</a>
+ <a>هذه هي الحلقة الاولى في الاظهار</a>
+{% endblock %}
+{% block scripts %}
+<script>
+	// مثال: تفعيل تأثير بسيط عند دخول الصفحة
+	document.addEventListener('DOMContentLoaded', () => {
+		const card = document.querySelector('.card');
+		if (card) card.classList.add('reveal');
+	});
+</script>
+{% endblock %}

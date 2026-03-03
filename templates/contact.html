@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}اتصل بنا — قواعد التجويد{% endblock %}
+
+{% block head %}
+    <meta name="description" content="صفحة التواصل مع فريق قواعد التجويد">
+{% endblock %}
+
+{% block content %}
+    <section class="card reveal">
+    <h2>اتصل بنا</h2>
+    <p>يمكنك التواصل معنا عبر هذه الصفحة.</p>
+    <p>البريد الإلكتروني: <a href="mailto:gwaaedtajweed@gmail.com">فريق التواصل</a></p>
+    <a class="btn outline" href="{{ url_for('index') }}">العودة للرئيسية</a>
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}المجتمع - قواعد التجويد{% endblock %}
+
+{% block head %}
+    <meta name="description" content="انضم إلى مجتمع قواعد التجويد لتبادل المعرفة">
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>المجتمع</h2>
+    <p>انضم إلى مجتمع قواعد التجويد لمشاركة المعرفة والتعلم معاً.</p>
+    <a class="btn" href="{{ url_for('index') }}">العودة للرئيسية</a>
+</section>
+<section class="hero">
+    <p>مواقع اخرى نافعة باذن الله </p>
+    <ul>
+        <li><a class = "btn" href="https://islamweb.net/ar/">موقع إسلام ويب</a></li>
+        <li><a class= "btn" href="https://quran.com/ar">موقع القرآن الكريم</a></li>
+        <li><a class="btn" href="https://tajweed.ai/">موقع تجويد AI</a></li>
+</section>
+{% endblock %}

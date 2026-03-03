@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo:wght@400;600&display=swap');
+
+body {
+    font-family: 'Cairo', 'Amiri', Tahoma, Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background: #fdfaf6;
+    color: #333;
+    direction: rtl;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Amiri', serif;
+    color: #2a3d45;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 1rem;
+    background: #e8e6e0;
+    margin: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #2a3d45;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.card h3 a {
+    color: #1a5a7b;
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    background: #e8e6e0;
+}
+
+footer .about,
+footer .credibility {
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #1a5a7b;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
