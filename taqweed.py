@@ -1,7 +1,9 @@
+import os
+
 from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-
+port = int(os.environ.get("PORT", 10000))
 
 @app.route('/')
 def index():
@@ -39,5 +41,5 @@ def sitemap():
 
 
 if __name__ == '__main__':
-	app.run() 
+	app.run(host="0.0.0.0", port=port) 
 
