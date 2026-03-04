@@ -1,3 +1,15 @@
+/* global messages */
+
+// some random Quranic verses or reminders shown on page load
+const messages = [
+    'اقرأ باسم ربك الذي خلق',
+    'وإذا سألك عبادي عني فإني قريب أجيب دعوة الداع إذا دعان',
+    'وقال ربكم ادعوني أستجب لكم',
+    'إن مع العسر يسرا',
+    'فذكر إن نفعت الذكرى'
+];
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const root = document.documentElement;
@@ -75,10 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el);
     });
 
-    const msgEl = document.createElement('div');
-    msgEl.className = 'quran-text';
-    msgEl.textContent = messages[Math.floor(Math.random() * messages.length)];
-    document.body.prepend(msgEl);
+    if (messages && messages.length) {
+        const msgEl = document.createElement('div');
+        msgEl.className = 'quran-text';
+        msgEl.textContent = messages[Math.floor(Math.random() * messages.length)];
+        document.body.prepend(msgEl);
+    }
 
     /* =======================
        تشغيل قائمة الهاتف ☰
