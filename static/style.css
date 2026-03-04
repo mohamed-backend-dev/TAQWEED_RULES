@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Cairo:wght@400;600&display=swap');
+
 
 body {
     font-family: 'Cairo', 'Amiri', Tahoma, Arial, sans-serif;
@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Amiri', serif;
     color: #2a3d45;
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem; 
 }
 
 .main-nav {
@@ -83,5 +83,109 @@ footer a {
     .main-nav {
         flex-direction: column;
         align-items: center;
+    }
+}
+/* =====  دا الخراNav Bar عصري ومتجاوب ===== */
+header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #e8e6e0; /* نفس لون الـ main-nav */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav li a {
+    display: block;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px
+}
+
+.main-nav li a:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    flex-direction: column;
+    list-style: none;
+    background: #e8e6e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content li a {
+    padding: 0.5rem 1rem;
+}
+
+/* زر القائمة على الهواتف */
+.nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== متجاوب ===== */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: relative;
+        top: 0;
+        right: 0;
+        box-shadow: none;
+    }
+
+    .dropdown .dropbtn::after {
+        content: ' ▾';
     }
 }

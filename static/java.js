@@ -71,3 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.querySelector('.main-nav');
+
+    toggle?.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+    // Dropdown toggle على الهواتف
+    document.querySelectorAll('.dropbtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            btn.nextElementSibling.classList.toggle('active');
+        });
+    });
+});
