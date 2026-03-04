@@ -12,21 +12,25 @@
 <body>
 <header>
     <nav>
-        <ul class="main-nav">
-            <li><a href="{{ url_for('index') }}">الرئيسية</a></li>
-            <li><a href="{{ url_for('second') }}">الصفحة الثانية</a></li>
-            <li><a href="{{ url_for('contact') }}">اتصل بنا</a></li>
-            <li><a href="{{ url_for('community') }}">المجتمع</a></li>
-            <!-- قائمة مقالات منسدلة -->
-            <li class="dropdown">
-                <a href="#" class="dropbtn">المقالات ▾</a>
-                <ul class="dropdown-content">
-                    <li><a href="{{ url_for('what_is_tajweed') }}">ما هو التجويد</a></li>
-                    <li><a href="{{ url_for('history_of_tajweed') }}">تاريخ علم التجويد</a></li>
-                    <li><a href="{{ url_for('tajweed_rules') }}">أحكام التجويد</a></li>
-                </ul>
-            </li>
-        </ul>
+        <div class="nav-container">
+            <button id="nav-toggle" class="nav-toggle">☰</button>
+
+            <ul class="main-nav">
+                <li><a href="{{ url_for('index') }}">الرئيسية</a></li>
+                <li><a href="{{ url_for('second') }}">الصفحة الثانية</a></li>
+                <li><a href="{{ url_for('contact') }}">اتصل بنا</a></li>
+                <li><a href="{{ url_for('community') }}">المجتمع</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">المقالات</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ url_for('what_is_tajweed') }}">ما هو التجويد</a></li>
+                        <li><a href="{{ url_for('history_of_tajweed') }}">تاريخ علم التجويد</a></li>
+                        <li><a href="{{ url_for('tajweed_rules') }}">أحكام التجويد</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
 <main class="container">
