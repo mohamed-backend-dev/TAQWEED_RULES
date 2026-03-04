@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
@@ -33,6 +33,9 @@ def history_of_tajweed():
 @app.route('/tajweed-rules')
 def tajweed_rules():
     return render_template('tajweed-rules.html')
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml')
 
 
 if __name__ == '__main__':
