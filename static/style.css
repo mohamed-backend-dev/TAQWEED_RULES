@@ -269,3 +269,30 @@ body {
         position: relative;
     }
 }
+.course-videos {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.video-item h3 {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* نسبة 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}

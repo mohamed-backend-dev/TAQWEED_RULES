@@ -8,19 +8,35 @@
 
 {% block content %}
 <section class="card reveal">
-	<h2>الصفحة الثانية</h2>
-	<p>هذه الصفحة تمتد من القالب الرئيسي باستخدام Jinja.</p>
-	<p>يمكنك تعديل المحتوى هنا وإضافة مكونات خاصة بك.</p>
+	<h2>دورات تدريبية مهمة</h2>
+	<p>هذه الدورات التدريب معدة من شيوخ ثقات و تهدف الى تعليم الطالب اساسيات علم التجويد</p>
+	<p>ادناه بعض اهم الدورات مجمعة من منصات مختلفة نسأل الله التوفيق</p>
 	<a class="btn outline" href="{{ url_for('index') }}">العودة للرئيسية</a>
-	<a class="btn" href="{{ url_for('contact') }}">اتصل بنا</a>
 </section>
-<a href="https://youtu.be/zCY3n64fxN4" target="_blank">
-    <img src="https://img.youtube.com/vi/zCY3n64fxN4/maxresdefault.jpg" 
-         alt="YouTube Video"
-         width="500">
-    <p>الفيديو الاول للفضيلة الشيخ ياسر سلامة في قواعد التجويد</p>
-</a>
- <a>هذه هي الحلقة الاولى في الاظهار</a>
+<div class="course-videos">
+
+    <div class="video-item">
+        <div class="video-wrapper">
+            <iframe 
+			    src="https://www.youtube.com/embed/PAFbKkYou48"
+                title="الدرس الأول"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <h3>الدرس الأول: مقدمة في علم التجويد</h3>
+    </div>
+	<div class="video-item">
+        <div class="video-wrapper">
+            <iframe 
+			    src="https://www.youtube.com/embed/7otdzghgnhU"
+                title="الدرس الأول"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
 {% endblock %}
 {% block scripts %}
 <script>
