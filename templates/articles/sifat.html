@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}صفات الحروف | مكتبة مقالات التجويد{% endblock %}
+
+{% block head %}
+<meta name="description" content="دروس ومقالات في صفات الحروف ضمن مكتبة أحكام التجويد.">
+<meta name="keywords" content="أحكام التجويد, تعلم التجويد, النون الساكنة, الميم الساكنة">
+{% endblock %}
+
+{% block content %}
+<section class="card reveal">
+    <h1>صفات الحروف</h1>
+    <p>هذه الصفحة تجمع مقالات صفات الحروف مع شروح واضحة وأمثلة من القرآن.</p>
+    <ul>
+        <li><a href="{{ url_for('article_page', category='sifat', article='hams-jahr') }}">الهمس والجهر</a></li>
+        <li><a href="{{ url_for('article_page', category='sifat', article='shidda-rikhwa') }}">الشدة والرخاوة</a></li>
+        <li><a href="{{ url_for('article_page', category='sifat', article='qalqala') }}">القلقلة</a></li>
+        <li><a href="{{ url_for('article_page', category='sifat', article='istila') }}">الاستعلاء</a></li>
+        <li><a href="{{ url_for('article_page', category='sifat', article='istifal') }}">الاستفال</a></li>
+    </ul>
+    <a class="btn outline" href="{{ url_for('articles_index') }}">العودة إلى فئات المقالات</a>
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}مكتبة مقالات التجويد | أحكام التجويد{% endblock %}
+
+{% block head %}
+<meta name="description" content="مكتبة مقالات متكاملة في علم التجويد تشمل النون الساكنة والميم الساكنة والراء والمخارج والصفات.">
+<meta name="keywords" content="أحكام التجويد, تعلم التجويد, النون الساكنة, الميم الساكنة, مخارج الحروف, صفات الحروف">
+{% endblock %}
+
+{% block content %}
+<section class="card reveal">
+    <h1>مكتبة مقالات علم التجويد</h1>
+    <p>اختر الفئة المناسبة للوصول إلى مقالات تعليمية مبسطة في علم التجويد.</p>
+    <ul>
+        <li><a href="{{ url_for('articles_category', category='noon-rules') }}">أحكام النون الساكنة والتنوين</a></li>
+        <li><a href="{{ url_for('articles_category', category='meem-rules') }}">أحكام الميم الساكنة</a></li>
+        <li><a href="{{ url_for('articles_category', category='raa-rules') }}">أحكام الراء</a></li>
+        <li><a href="{{ url_for('articles_category', category='makharej') }}">مخارج الحروف</a></li>
+        <li><a href="{{ url_for('articles_category', category='sifat') }}">صفات الحروف</a></li>
+    </ul>
+</section>
+{% endblock %}

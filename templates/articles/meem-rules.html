@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}أحكام الميم الساكنة | مكتبة مقالات التجويد{% endblock %}
+
+{% block head %}
+<meta name="description" content="دروس ومقالات في أحكام الميم الساكنة ضمن مكتبة أحكام التجويد.">
+<meta name="keywords" content="أحكام التجويد, تعلم التجويد, النون الساكنة, الميم الساكنة">
+{% endblock %}
+
+{% block content %}
+<section class="card reveal">
+    <h1>أحكام الميم الساكنة</h1>
+    <p>هذه الصفحة تجمع مقالات أحكام الميم الساكنة مع شروح واضحة وأمثلة من القرآن.</p>
+    <ul>
+        <li><a href="{{ url_for('article_page', category='meem-rules', article='izhar-shafawi') }}">الإظهار الشفوي</a></li>
+        <li><a href="{{ url_for('article_page', category='meem-rules', article='idgham-shafawi') }}">الإدغام الشفوي</a></li>
+        <li><a href="{{ url_for('article_page', category='meem-rules', article='ikhfa-shafawi') }}">الإخفاء الشفوي</a></li>
+        <li><a href="{{ url_for('article_page', category='meem-rules', article='huruf-meem-rules') }}">حروف أحكام الميم الساكنة</a></li>
+        <li><a href="{{ url_for('article_page', category='meem-rules', article='meem-sakinah-overview') }}">مدخل إلى الميم الساكنة</a></li>
+    </ul>
+    <a class="btn outline" href="{{ url_for('articles_index') }}">العودة إلى فئات المقالات</a>
+</section>
+{% endblock %}

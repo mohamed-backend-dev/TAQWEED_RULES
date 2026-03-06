@@ -1,11 +1,9 @@
-
-
 body {
     font-family: 'Cairo', 'Amiri', Tahoma, Arial, sans-serif;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 70px 1rem 0;
     background: #fdfaf6;
     color: #333;
     direction: rtl;
@@ -15,23 +13,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Amiri', serif;
     color: #2a3d45;
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem; 
-}
-
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    padding: 1rem;
-    background: #e8e6e0;
-    margin: 0;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #2a3d45;
-    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .container {
@@ -55,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #fff;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 a {
@@ -79,30 +61,32 @@ footer a {
     text-decoration: none;
 }
 
-@media (max-width: 480px) {
-    .main-nav {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-/* =====  دا الخراNav Bar عصري ومتجاوب ===== */
+/* Navigation */
 header nav {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
-    background: #e8e6e0; /* نفس لون الـ main-nav */
+    background: #e8e6e0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
     padding: 0.5rem 1rem;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .main-nav {
@@ -117,61 +101,56 @@ header nav {
     position: relative;
 }
 
-.main-nav li a {
+.main-nav a {
     display: block;
     padding: 0.5rem 0.8rem;
-    border-radius: 4px
+    border-radius: 4px;
+    text-decoration: none;
+    color: #2a3d45;
+    font-weight: 600;
 }
 
-.main-nav li a:hover {
-    background: rgba(0,0,0,0.05);
+.main-nav a:hover {
+    background: rgba(0, 0, 0, 0.05);
 }
 
-/* Dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
     min-width: 180px;
-    flex-direction: column;
     list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
     background: #e8e6e0;
     border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown:hover .dropdown-content {
-    display: flex;
+    display: block;
 }
 
 .dropdown-content li a {
     padding: 0.5rem 1rem;
 }
 
-/* زر القائمة على الهواتف */
-.nav-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* ===== متجاوب ===== */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
     }
 
     .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
         position: absolute;
         top: 100%;
         right: 0;
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        border-top: 1px solid rgba(0,0,0,0.1);
+        background: #e8e6e0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
     }
 
     .main-nav.active {
@@ -183,92 +162,16 @@ header nav {
         top: 0;
         right: 0;
         box-shadow: none;
-    }
-
-    .dropdown .dropbtn::after {
-        content: ' ▾';
+        border-radius: 0;
     }
 }
-/* ===== NAV RESPONSIVE FIX ===== */
 
-header nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    background: #e8e6e0;
-    z-index: 1000;
-}
-
-/* منع المحتوى من الاختفاء خلف الناف */
-body {
-    padding-top: 70px;
-}
-
-.nav-container {
-    max-width: 800px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-}
-
-.nav-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.main-nav {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #e8e6e0;
-    list-style: none;
-    padding: 0.5rem 0;
-    margin: 0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-    .nav-toggle {
-        display: block;
-    }
-
+@media (max-width: 480px) {
     .main-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #e8e6e0;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        padding: 1rem 0;
-    }
-
-    .main-nav.active {
-        display: flex;
-    }
-
-    .dropdown-content {
-        position: relative;
+        gap: 0.2rem;
     }
 }
+
 .course-videos {
     display: grid;
     gap: 2rem;
@@ -283,7 +186,7 @@ body {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* نسبة 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 10px;

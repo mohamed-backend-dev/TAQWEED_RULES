@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}مخارج الحروف | مكتبة مقالات التجويد{% endblock %}
+
+{% block head %}
+<meta name="description" content="دروس ومقالات في مخارج الحروف ضمن مكتبة أحكام التجويد.">
+<meta name="keywords" content="أحكام التجويد, تعلم التجويد, النون الساكنة, الميم الساكنة">
+{% endblock %}
+
+{% block content %}
+<section class="card reveal">
+    <h1>مخارج الحروف</h1>
+    <p>هذه الصفحة تجمع مقالات مخارج الحروف مع شروح واضحة وأمثلة من القرآن.</p>
+    <ul>
+        <li><a href="{{ url_for('article_page', category='makharej', article='halq') }}">مخرج الحلق</a></li>
+        <li><a href="{{ url_for('article_page', category='makharej', article='lisan') }}">مخرج اللسان</a></li>
+        <li><a href="{{ url_for('article_page', category='makharej', article='jawf') }}">مخرج الجوف</a></li>
+        <li><a href="{{ url_for('article_page', category='makharej', article='khayshoom') }}">مخرج الخيشوم</a></li>
+        <li><a href="{{ url_for('article_page', category='makharej', article='shafatan') }}">مخرج الشفتين</a></li>
+    </ul>
+    <a class="btn outline" href="{{ url_for('articles_index') }}">العودة إلى فئات المقالات</a>
+</section>
+{% endblock %}
