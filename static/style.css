@@ -199,3 +199,75 @@ header nav {
     left: 0;
     top: 0;
 }
+
+/* button styling for links and actions */
+.btn,
+a.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    background: #1a5a7b;
+    color: #fff;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* article list links */
+.article-link {
+    display: block;
+    padding: 0.6rem 1rem;
+    margin: 0.3rem 0;
+    background: #f5f5f5;
+    color: #1a5a7b;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.article-link:hover {
+    background: #e0e0e0;
+    transform: translateX(4px);
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card ul li {
+    margin: 0;
+}
+
+.article-link .btn {
+    /* keep styles if both classes applied */
+}
+
+.btn:hover,
+a.btn:hover {
+    background: #163d53;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn:active,
+a.btn:active {
+    transform: scale(0.97);
+}
+
+.btn.outline,
+a.btn.outline {
+    background: transparent;
+    color: #1a5a7b;
+    border-color: #1a5a7b;
+}
+
+.btn.outline:hover,
+a.btn.outline:hover {
+    background: #1a5a7b;
+    color: #fff;
+}
+

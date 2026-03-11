@@ -26,6 +26,17 @@
 </header>
 <main class="container">
     {% block content %}{% endblock %}
+
+    {%- if related_articles %}
+    <section class="related">
+        <h3>مقالات أخرى في نفس الفئة</h3>
+        <ul>
+            {%- for item in related_articles %}
+                <li><a class="article-link" href="{{ item.url }}">{{ item.slug.replace('-', ' ') }}</a></li>
+            {%- endfor %}
+        </ul>
+    </section>
+    {%- endif %}
 </main>
 <footer>
     <section class="about">

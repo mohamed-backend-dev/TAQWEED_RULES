@@ -1,14 +1,15 @@
 {% extends "layout.html" %}
 
-{% block title %}المجتمع - قواعد التجويد{% endblock %}
+{% block title %}مجتمع متعلمي التجويد | موقع قواعد التجويد{% endblock %}
 
 {% block head %}
-    <meta name="description" content="انضم إلى مجتمع قواعد التجويد لتبادل المعرفة">
+    <meta name="description" content="انضم إلى مجتمع متعلمي وقارئي القرآن لتبادل الخبرات في أحكام التجويد، طرح الأسئلة، مشاركة الموارد النافعة، وبناء رحلة ثابتة لتحسين التلاوة خطوة بخطوة.">
+    <link rel="canonical" href="{{ request.url }}">
 {% endblock %}
 
 {% block content %}
 <section class="hero">
-    <h2>المجتمع</h2>
+    <h1>المجتمع</h1>
     <p>انضم إلى مجتمع قواعد التجويد لمشاركة المعرفة والتعلم معاً.</p>
     <a class="btn" href="{{ url_for('index') }}">العودة للرئيسية</a>
 </section>

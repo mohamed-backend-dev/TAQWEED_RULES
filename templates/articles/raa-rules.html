@@ -12,10 +12,10 @@
     <h1>أحكام الراء</h1>
     <p>هذه الصفحة تجمع مقالات أحكام الراء مع شروح واضحة وأمثلة من القرآن.</p>
     <ul>
-        <li><a href="{{ url_for('article_page', category='raa-rules', article='tafkheem') }}">تفخيم الراء</a></li>
-        <li><a href="{{ url_for('article_page', category='raa-rules', article='tarqeeq') }}">ترقيق الراء</a></li>
-        <li><a href="{{ url_for('article_page', category='raa-rules', article='raa-openings') }}">أحكام الراء في أول الكلمة</a></li>
-        <li><a href="{{ url_for('article_page', category='raa-rules', article='raa-waqf') }}">أحكام الراء عند الوقف</a></li>
+        <li><a class="article-link" href="{{ url_for('article_page', category='raa-rules', article='tafkheem') }}">تفخيم الراء</a></li>
+        <li><a class="article-link" href="{{ url_for('article_page', category='raa-rules', article='tarqeeq') }}">ترقيق الراء</a></li>
+        <li><a class="article-link" href="{{ url_for('article_page', category='raa-rules', article='raa-openings') }}">أحكام الراء في أول الكلمة</a></li>
+        <li><a class="article-link" href="{{ url_for('article_page', category='raa-rules', article='raa-waqf') }}">أحكام الراء عند الوقف</a></li>
     </ul>
     <a class="btn outline" href="{{ url_for('articles_index') }}">العودة إلى فئات المقالات</a>
 </section>

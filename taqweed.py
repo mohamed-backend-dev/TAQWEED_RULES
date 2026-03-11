@@ -66,7 +66,17 @@ def article_page(category, article):
     if not os.path.isfile(template_path):
         abort(404)
 
-    return render_template(template_name)
+    # build list of other articles in the same category for internal linking
+    related = []
+    for a in ARTICLE_CATEGORIES.get(category, []):
+        if a == article:
+            continue
+        related.append({
+            "slug": a,
+            "url": url_for("article_page", category=category, article=a),
+        })
+
+    return render_template(template_name, related_articles=related)
 
 
 @app.route('/<page>')
@@ -122,6 +132,30 @@ def sitemap():
                 "changefreq": "monthly",
                 "priority": "0.7",
             })
+
+    # include any other top-level template pages automatically (e.g. contact, community, etc.)
+    templates_dir = app.jinja_loader.searchpath[0]
+    for dirpath, dirnames, filenames in os.walk(templates_dir):
+        for filename in filenames:
+            if not filename.endswith(".html"):
+                continue
+            rel_path = os.path.relpath(os.path.join(dirpath, filename), templates_dir)
+            # skip files we've already added or that are part of articles
+            if rel_path == "index.html" or rel_path.startswith("articles"):
+                continue
+            # compute URL. If file is at top level (e.g. "contact.html"), use render_page route
+            parts = rel_path.replace("\\", "/").split("/")
+            if len(parts) == 1:
+                page = parts[0].rsplit(".", 1)[0]
+                urls.append({
+                    "loc": url_for("render_page", page=page, _external=True),
+                    "lastmod": template_lastmod(rel_path),
+                    "changefreq": "monthly",
+                    "priority": "0.6",
+                })
+            else:
+                # deeper path not handled by existing routes; skip
+                pass
 
     xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     xml_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
