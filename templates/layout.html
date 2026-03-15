@@ -6,7 +6,7 @@
     <title>{% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.min.css') }}">
 </head>
 <body>
 <header>
@@ -52,7 +52,7 @@
     </section>
     <p>© 2026 مشروع التجويد</p>
 </footer>
-<script src="{{ url_for('static', filename='java.js') }}"></script>
+<script src="{{ url_for('static', filename='java.min.js') }}"></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

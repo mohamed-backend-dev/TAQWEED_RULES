@@ -1,9 +1,30 @@
 import os
-from datetime import date
+from datetime import date, datetime, timezone
+from email.utils import format_datetime
 from xml.sax.saxutils import escape
-from flask import Flask, abort, render_template, request, Response, url_for
+from flask import Flask, abort, make_response, render_template, request, Response, url_for
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
+
+
+def get_template_last_modified(template_name: str) -> str:
+    templates_dir = app.jinja_loader.searchpath[0]
+    template_path = os.path.join(templates_dir, template_name)
+    if os.path.isfile(template_path):
+        dt = datetime.fromtimestamp(os.path.getmtime(template_path), tz=timezone.utc)
+        # HTTP header expects GMT time
+        return format_datetime(dt, usegmt=True)
+    return format_datetime(datetime.now(tz=timezone.utc), usegmt=True)
+
+
+def render_template_with_headers(template_name: str, **context):
+    content = render_template(template_name, **context)
+    response = make_response(content)
+    response.headers['Cache-Control'] = 'public, max-age=3600'
+    response.headers['Last-Modified'] = get_template_last_modified(template_name)
+    # يؤكد لمحركات البحث أنه يمكن فهرسة هذه الصفحة
+    response.headers['X-Robots-Tag'] = 'index, follow'
+    return response
 port = int(os.environ.get("PORT", 10000))
 
 ARTICLE_CATEGORIES = {
@@ -33,12 +54,12 @@ ARTICLE_CATEGORIES = {
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template_with_headers('index.html')
 
 
 @app.route('/articles')
 def articles_index():
-    return render_template('articles/index.html')
+    return render_template_with_headers('articles/index.html')
 
 
 @app.route('/articles/<category>')
@@ -51,7 +72,7 @@ def articles_category(category):
     if not os.path.isfile(template_path):
         abort(404)
 
-    return render_template(template_name)
+    return render_template_with_headers(template_name)
 
 
 @app.route('/articles/<category>/<article>')
@@ -76,7 +97,7 @@ def article_page(category, article):
             "url": url_for("article_page", category=category, article=a),
         })
 
-    return render_template(template_name, related_articles=related)
+    return render_template_with_headers(template_name, related_articles=related)
 
 
 @app.route('/<page>')
@@ -87,7 +108,7 @@ def render_page(page):
     if not os.path.isfile(page_path):
         abort(404)
 
-    return render_template(f"{page}.html")
+    return render_template_with_headers(f"{page}.html")
 
 
 @app.route('/sitemap.xml')
